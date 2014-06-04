@@ -23,8 +23,3 @@
       - if current_admin
         .admin-control
           = link_to 'Crear Post', new_post_path, class: 'btn btn-primary'
-    .admins
-      - if admin_signed_in?
-        = current_admin.email
-      - else
-        = link_to 'Sign up', new_admin_registration_path, class: 'right' 

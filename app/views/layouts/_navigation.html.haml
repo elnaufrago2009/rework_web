@@ -13,7 +13,13 @@
       %ul.nav.navbar-nav
         = render 'layouts/navigation_links'
       %ul.nav.navbar-nav.navbar-right
-        %li= link_to "Home", '#', class:"active"
+        - if admin_signed_in?          
+          %li= link_to raw(current_admin.email + " Salir?"), new_admin_registration_path, class: 'right' 
+        - else
+          %li= link_to 'Login', new_admin_session_path, class: 'right' 
+          
+
+        
 
 
 
